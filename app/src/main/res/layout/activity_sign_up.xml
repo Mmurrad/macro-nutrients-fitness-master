@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center"
+    android:layout_gravity="center"
+    tools:context="com.auth.SignUpActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/username"
+        android:textSize="17sp"
+        android:hint="     Username"
+        android:id="@+id/username_id"
+        ></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/phone"
+        android:textSize="17sp"
+        android:hint="     Phone"
+        android:id="@+id/phone_id"
+        ></EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/age"
+        android:textSize="17sp"
+        android:hint="     Age"
+        android:id="@+id/age_id"
+        ></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:padding="10dp"
+        android:hint="    Email"
+        android:textSize="17sp"
+        android:id="@+id/signup_email_id"
+        android:drawableLeft="@drawable/email"
+        ></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:padding="10dp"
+        android:hint="    Password"
+        android:textSize="17sp"
+        android:inputType="numberPassword"
+        android:id="@+id/sign_password_id"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/password"
+        ></EditText>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="SignUp"
+        android:id="@+id/signup_id"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:textSize="20sp"
+        ></Button>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="ALREADY HAVE AN ACCOUNT ? LOGIN"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:id="@+id/login_link_id"
+        android:padding="10dp"
+        ></TextView>
+
+</LinearLayout>

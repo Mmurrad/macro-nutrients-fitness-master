@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.easyfitness">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.SettingsTheme"
+        tools:replace="android:icon">
+        <activity android:name="com.auth.FoodDetailsActivity"></activity>
+        <activity android:name="com.auth.CalorieMeasureActivity" />
+        <activity android:name="com.auth.BMICalculationActivity" />
+        <activity android:name="com.auth.SignUpActivity">
+
+        </activity>
+        <activity android:name="com.auth.SignInActivity" >
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name="com.water.WaterTestActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateUnchanged" />
+        <activity
+            android:name=".intro.MainIntroActivity"
+            android:theme="@style/Theme.Intro" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name="com.water.MainWindow.MainActivity" />
+        <activity android:name="com.water.WaterDrankHistory.DateLogActivity" />
+        <activity android:name="com.water.WaterDrankHistory.TimeLogActivity" />
+        <activity android:name="com.water.Settings.SettingsActivity" />
+        <activity android:name="com.water.OutlinesFragments.OutlineActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.water.Chart.ChartActivity"
+            android:background="@color/blue" />
+        <activity android:name="com.water.SplashScreen" />
+
+        <meta-data
+            android:name="firebase_crash_collection_enabled"
+            android:value="@bool/FIREBASE_CRASH_ENABLED" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name=".utils.AlarmReceiver"
+            android:process=":remote" />
+        <receiver android:name="com.water.Notifications.NotificationReciever" />
+        <receiver android:name="com.water.BroadcastReceivers.DateLogBroadcastReceiver" />
+        <receiver android:name="com.water.BroadcastReceivers.StopNotificationBroadcastReceiver" />
+        <receiver
+            android:name="com.water.BroadcastReceivers.BootBroadcastReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.water.Widget.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+        <service
+            android:name="com.water.Widget.UpdateWidgetService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACTION_HEADSET_PLUG" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+</manifest>
